@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std ;
+
+void sumofanypair(int arr[],int target,int l,int r)
+{
+    
+    while (l<r)
+    {
+      if(arr[l]+arr[r] == target)
+      {
+      cout << "the pair (" <<arr[l]<<" , "<<arr[r]<<") sum to "<<target<< endl;
+      break;
+      }
+      else if(arr[l]+arr[r]<target) 
+      {
+       l++;
+      } 
+      else
+      {
+      r--;
+      }        
+    }
+    
+}
+int main()
+{
+    int ar[]= {1,2,3,4,5,7,11};
+    int x=9;
+    int left=0;
+    int right =7;
+    sumofanypair(ar,x,left, right);
+}
