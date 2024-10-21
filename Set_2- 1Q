@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int maxSubArraySum(vector<int>& nums) 
+{
+    int maxc=0,maxg=0;                     
+    for(int i=0 ; i<nums.size(); i++)
+    {
+        maxc= max(nums[i],maxc + nums[i]);
+         cout<<maxc<<"\n";
+        if(maxc>maxg)
+        {
+            maxg=maxc;
+           // cout<<maxc<<"\n";
+        }
+    }
+    return maxg;
+}
+    
+
+int main() {
+   vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+   cout << "Maximum subarray sum is " << maxSubArraySum(nums) << endl;
+    return 0;
+}
